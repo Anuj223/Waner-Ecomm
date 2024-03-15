@@ -1,23 +1,23 @@
 
-const  country= document.getElementsByClassName("country-select")
-// const countryList = require("./flag")
-import { countryList } from "./flag";
-for (let code in countryList)
-{
-        console.log(countryList[code]);
-}
-// for(let select of country)
-// {
-//         for(currflag in countryFlags)
-//         {
-//                 let newoption = document.createElement("option")
-//                 newoption.innerText = currflag;
-//                 newoption.value = currflag;
-//                 if(select)
-//                 {
-//                         newoption.selected = "selected";
-//                 }
-//                 select.append(newoption)
+const  country= document.querySelectorAll(".add-icon select")
+const img= document.querySelector(".lang-img")
+for(let select of country){
+        for(code in countryList){
+                let newOption = document.createElement("option");
+                newOption.innerHTML=code;
+                newOption.value=code;
+                select.append(newOption);
+        }
 
-//         }
-// }
+        select.addEventListener("change",(evt)=>{
+                updateflag(evt.target);
+        })
+}
+
+const updateflag=(Element)=>{
+        let countryname = Element.value;
+        let countrycode = countryList[countryname];
+        let newSrc = `https://flagsapi.com/${countrycode}/flat/64.png`
+        img.src = newSrc;
+}
+

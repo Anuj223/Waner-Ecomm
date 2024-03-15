@@ -54,6 +54,10 @@
         font-weight: bold;
         font-size: 0.88em;
         border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 64px;
 }
 
 .add-secound{
