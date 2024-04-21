@@ -211,6 +211,9 @@
         font-size: 2.67rem;
         font-weight: 600;
 }
+.arrow:hover{
+        cursor: pointer;
+}
 .hero-h2{
         margin: auto;
 }
