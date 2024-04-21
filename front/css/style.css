@@ -191,15 +191,28 @@
 
 /* Hero-section */
 .hero-section{
-        background: url("../images/signposts-40322_1920.png") center/cover no-repeat;
-        background-size: 70%;
+        background: url("../images/head1.png") center/cover no-repeat;
+        /* background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat; */
+        background-size: 60%;
         max-height: 70%;
         max-width: 100%;
+        display: flex;
+        flex-direction: row;
         /* background: #ddd8cf; */
         /* width: 400px; */
 }
-.h2-hero{
-        padding: 200px 520px;
+.arrow{
+        margin: 50vh 1vw;
+        justify-content: center;
+        align-items: center;
+        color: #222f3d;
+        font-size: 2.67rem;
+        font-weight: 600;
+}
+.hero-h2{
+        margin: auto;
 }
 /* Shop-Content */
 .shop-content{

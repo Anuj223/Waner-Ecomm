@@ -1,3 +1,4 @@
+// const { text } = require("express");
 
         // const translate = require("google-translate-api")
         const country= document.querySelectorAll(".add-icon select")
@@ -7,7 +8,8 @@
         /*
 *For Countries
 */ 
-for(let select of country){
+
+        for(let select of country){
         for(code in countryList){
                 let newOption = document.createElement("option");
                 newOption.innerHTML=code;
@@ -50,3 +52,36 @@ for(let select of selectlang)
         })
 }
 
+const images= [
+       "head1.png",
+        "head2.jpg",
+         "head3.png",
+        "head4.jpg"
+];
+let currentIndex = 0;
+
+document.getElementById('arrleft').addEventListener('click', ()=>{
+        var herosection = document.querySelector('.hero-section');
+        const nextImage = images[currentIndex];
+        console.log(nextImage);
+                herosection.style.backgroundImage = `url("../images/${nextImage}")`;
+
+     hidetext();
+     currentIndex = (currentIndex +1)% images.length;
+})
+
+document.getElementById('arrright').addEventListener('click', ()=>{
+        var herosection = document.querySelector('.hero-section');
+        const nextImage = images[currentIndex];
+        console.log(nextImage);
+                herosection.style.backgroundImage = `url("../images/${nextImage}")`;
+
+     hidetext();
+     currentIndex = (currentIndex +1)% images.length;
+})
+const hidetext = ()=>{
+        if(currentIndex == 0)
+        document.getElementById('h2-hero').textContent = "Shop what you like the most";      
+        else
+        document.getElementById('h2-hero').textContent = '';      
+}
