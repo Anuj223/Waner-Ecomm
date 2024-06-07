@@ -51,37 +51,53 @@ for(let select of selectlang)
                 updatelang(evt.target);
         })
 }
-
-const images= [
-       "head1.png",
+const images = [
+        "head1.png",
         "head2.jpg",
-         "head3.png",
+        "head3.png",
         "head4.jpg"
-];
-let currentIndex = 0;
-
-document.getElementById('arrleft').addEventListener('click', ()=>{
-        var herosection = document.querySelector('.hero-section');
+    ];
+    let currentIndex = 0;
+    let interval;
+    
+    const updateImageAndText = () => {
+        const herosection = document.querySelector('.hero-section');
         const nextImage = images[currentIndex];
-        console.log(nextImage);
-                herosection.style.backgroundImage = `url("../images/${nextImage}")`;
-
-     hidetext();
-     currentIndex = (currentIndex +1)% images.length;
-})
-
-document.getElementById('arrright').addEventListener('click', ()=>{
-        var herosection = document.querySelector('.hero-section');
-        const nextImage = images[currentIndex];
-        console.log(nextImage);
-                herosection.style.backgroundImage = `url("../images/${nextImage}")`;
-
-     hidetext();
-     currentIndex = (currentIndex +1)% images.length;
-})
-const hidetext = ()=>{
-        if(currentIndex == 0)
-        document.getElementById('h2-hero').textContent = "Shop what you like the most";      
-        else
-        document.getElementById('h2-hero').textContent = '';      
-}
+        // console.log(nextImage);
+        herosection.style.backgroundImage = `url("../images/${nextImage}")`;
+    
+        if (currentIndex === 0) {
+            document.getElementById('h2-hero').textContent = "Shop what you like the most";
+        } else {
+            document.getElementById('h2-hero').textContent = '';
+        }
+    };
+    
+    const nextSlide = () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImageAndText();
+    };
+    
+    const prevSlide = () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImageAndText();
+    };
+    
+    document.getElementById('arrleft').addEventListener('click', () => {
+        clearInterval(interval);
+        prevSlide();
+        interval = setInterval(nextSlide, 3000); // Restart interval
+    });
+    
+    document.getElementById('arrright').addEventListener('click', () => {
+        clearInterval(interval);
+        nextSlide();
+        interval = setInterval(nextSlide, 3000); // Restart interval
+    });
+    
+    // Initialize with the first image
+    updateImageAndText();
+    
+    // Start the automatic slide transition
+    interval = setInterval(nextSlide, 3000);
+    
