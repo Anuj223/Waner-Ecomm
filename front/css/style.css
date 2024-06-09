@@ -168,9 +168,9 @@
         align-items: center;
         justify-content: space-evenly;
 }
-/* .panel-all{
-        display: inline;
-} */
+.panel-all:hover{
+        cursor: pointer;
+}
 
 .panel-ops p{
         display: inline;
@@ -187,6 +187,95 @@
 .panels-deals{
         font-size: 0.9rem;
         font-weight: 900;
+}
+
+/* Sidebar-navigation */
+
+.sidebar-container-navigation{
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        display: none;
+}
+.sidebar{
+        display: flex;
+        flex-direction: row;
+        
+}
+.sidebar-container{
+        height: 100vh;
+        width: 350px;
+        background-color: #cccccc;
+        overflow-y: auto;
+}
+.sidebar-head{
+        background-color: #222f3d;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-family:'Courier New', Courier, monospace;
+/* font-size: 1.48rem; */
+        font-size: 0.9rem;
+        font-weight: 900;
+}
+.sidebar-head i{
+
+        filter: invert(1);
+        color: #0F1111;
+        font-size: 1.5rem;
+        padding-right: 10px;
+}
+.sidebar-content{
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: #0F1111;
+}
+.sidebar-content ul{
+        list-style: none;
+        padding: 6px;
+        font-family:'Courier New', Courier, monospace;
+        font:14px;
+        /* font-weight: bold; */
+        margin-right: 20px;
+}
+.bullets{
+        display: flex;
+        width: 300px;
+        margin: 20px 0px;
+}
+.bullets i{
+        margin-left: auto;
+}
+.bullets i:hover{
+        cursor: pointer;
+}
+.close-sidebar{
+        filter: invert(1);
+        color: #3e3636;
+        font-size: 2.48rem;
+        padding: 0px 5px;
+        font-weight: bold;
+
+}
+.close-sidebar:hover{
+        cursor: pointer;
+}
+.sidebar-separator{
+        border-bottom: 1px solid #d5dbdb;
+    padding: 0;
+    margin: 5px 0;
+    width: 110%;
 }
 
 /* Hero-section */

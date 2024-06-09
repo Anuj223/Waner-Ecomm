@@ -101,3 +101,21 @@ const images = [
     // Start the automatic slide transition
     interval = setInterval(nextSlide, 3000);
     
+    //Sidebar navigation
+    const Sidebarnavigation = document.querySelector(".sidebar-container-navigation");
+    const OpenSidebarButton = document.querySelector(".panel-all");
+    const CloseSidebarButton = document.querySelector(".close-sidebar");
+    
+    OpenSidebarButton.addEventListener('click',()=>{
+        Sidebarnavigation.style.display='flex';
+});
+
+        CloseSidebarButton.addEventListener('click',()=>{
+                Sidebarnavigation.style.display='none'
+        });
+
+        SidebarNavigation.addEventListener('click', (event) => {
+                if (event.target === SidebarNavigation) {
+                    SidebarNavigation.style.display = 'none';
+                }
+        });
