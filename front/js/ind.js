@@ -52,10 +52,12 @@ for(let select of selectlang)
         })
 }
 const images = [
-        "head1.png",
+        "head1.jpg",
         "head2.jpg",
-        "head3.png",
-        "head4.jpg"
+        "head3.jpg",
+        "head4.jpg",
+        "head5.jpg",
+        "head6.jpg"
     ];
     let currentIndex = 0;
     let interval;
@@ -65,12 +67,7 @@ const images = [
         const nextImage = images[currentIndex];
         // console.log(nextImage);
         herosection.style.backgroundImage = `url("../images/${nextImage}")`;
-    
-        if (currentIndex === 0) {
-            document.getElementById('h2-hero').textContent = "Shop what you like the most";
-        } else {
-            document.getElementById('h2-hero').textContent = '';
-        }
+
     };
     
     const nextSlide = () => {
@@ -99,7 +96,7 @@ const images = [
     updateImageAndText();
     
     // Start the automatic slide transition
-    interval = setInterval(nextSlide, 3000);
+    interval = setInterval(nextSlide, 4000);
     
     //Sidebar navigation
     const Sidebarnavigation = document.querySelector(".sidebar-container-navigation");
@@ -114,8 +111,18 @@ const images = [
                 Sidebarnavigation.style.display='none'
         });
 
-        SidebarNavigation.addEventListener('click', (event) => {
-                if (event.target === SidebarNavigation) {
-                    SidebarNavigation.style.display = 'none';
+        Sidebarnavigation.addEventListener('click', (event) => {
+                if (event.target === Sidebarnavigation) {
+                    Sidebarnavigation.style.display = 'none';
                 }
         });
+
+// Footer
+const backto = document.querySelector(".footer-panel");
+console.log(backto);
+backto.addEventListener("click",()=>{
+        window.scrollTo({
+                top:0,
+                behavior: 'smooth'
+        });
+});
