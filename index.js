@@ -54,7 +54,7 @@ async function init(){
         }
 }
 
-app.use(express.static(path.join(__dirname,'front')))
+app.use(express.static(path.join(__dirname,'docs')))
 app.use(express.urlencoded());
 // Stich the routes to the server
 require("./routes/auth.routes")(app)
