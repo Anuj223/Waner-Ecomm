@@ -66,7 +66,7 @@ const images = [
         const herosection = document.querySelector('.hero-section');
         const nextImage = images[currentIndex];
         // console.log(nextImage);
-        herosection.style.backgroundImage = `url("../images/${nextImage}")`;
+        herosection.style.backgroundImage = `url("./images/${nextImage}")`;
 
     };
     
