@@ -394,6 +394,12 @@ footer{
         .log{
                 font-size: 2.2rem;
         }
+        .hero-section{
+                width: 100vw; 
+                height: 70vh; 
+                background-size: cover; 
+                position: relative;
+            }
         .box {
                 width: calc(50% - 20px); /* Two boxes per row on medium screens */
             }
@@ -404,7 +410,12 @@ footer{
         height: 144px;
         /* justify-content: cen; */
         }
-        
+        .hero-section{
+                height: 55vh;
+        }
+        .arrow{
+                margin: 25vh 1vw;
+        }
 .nav-search{
         width: 250px;
 }
@@ -434,6 +445,13 @@ footer{
 .panel-deals{
         font-size: 0.6rem;
 }
+.hero-section{
+        height: 45vh;
+}
+.arrow{
+        margin: 20vh 1vw;
+        font-size: 2.29rem;
+}
 .box {
         width: calc(100% - 20px); /* One box per row on small screens */
     }
@@ -449,7 +467,13 @@ footer{
 .nav-search{
         width: 220px;
 }
-
+.hero-section{
+        height: 41vh;
+}
+.arrow{
+        margin: 18vh 1vw;
+        font-size: 2.0rem;
+}
 }
 @media screen and (max-width: 370px) {
  
@@ -469,6 +493,13 @@ footer{
                 top: 10px;
                 position: absolute;
                 right: 5px;
+        }
+        .hero-section{
+                height: 30vh;
+        }
+        .arrow{
+                margin: 13vh 1vw;
+                font-size: 1.8rem;
         }
 .panel-ops{
         font-size: 0.57rem;     
